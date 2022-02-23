@@ -1,13 +1,75 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.menu-items{
+    display: flex;
+    list-style: none;
+    color: green;
+    font-size: 25px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.nav-logo{
+    width: 350px;
 }
+
+.menu{
+    display: flex;
+    
+    align-items: center;
+}
+.menu-items>li>a{
+    background-color: #5c5e00;
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 15px;
+}
+
+.menu-items>li>a:hover {
+    background-color: rgb(228, 196, 18);
+}
+
+.nav-button{
+    font-size: 25px;
+    padding: 5px 35px;
+    background-color: rgb(65, 65, 65);
+    color: rgb(245, 245, 245);
+    border-radius: 15px;
+    margin-left: 35px;
+}
+.nav-button:hover{
+    background-color: #ec7200;
+}
+
+.nav-search{
+    display: flex;
+}
+
+.form-search{
+    padding: 25px 10px;
+}
+
+.form-add{
+    border: 2px dotted black;
+    border-radius: 10px;
+}
+
+.add-label{
+    padding: 15px;
+}
+
+.add-input{
+    margin: 5px;
+}
+
+.add-btn{
+    position:relative;
+    left: 93%;
+
+}
+
+.show-table{
+    margin-top: 25px;
+}
+ table, th, tr, td{
+     border: 1px solid black;
+ }

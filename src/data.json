@@ -1,0 +1,92 @@
+{
+    "empleados": [
+        {
+            "Ignition": "154621354",
+            "Nombre": "Carina",
+            "Apellido1": "Armendariz",
+            "Apellido2": "Loya",
+            "CURP": "ARCA98988546GSDFG5",
+            "Puesto": "Supervisor",
+            "Departamento": "Recursos Humanos",
+            "SoftSkills": [
+                "Action oriented",
+                "Builds Networks",
+                "Crear Objetos"
+            ],
+            "HardSkills": [
+                "Organizational Development",
+                "Training Legal Aspects",
+                "Crear objetos"
+            ],
+            "Cursos": [
+                ""
+            ],
+            "Reembolsos": [
+                ""
+            ]
+        },
+        {
+            "Ignition": "11059361",
+            "Nombre": "Isaac",
+            "Apellido1": "Ceballos",
+            "Apellido2": "Aguilar",
+            "CURP": "CEAI990411HCHBGS02",
+            "Puesto": "Practicante",
+            "Departamento": "Recursos Humanos",
+            "SoftSkills": [
+                "Crear Objetos"
+            ],
+            "HardSkills": [
+                "Crear objetos"
+            ],
+            "Cursos": [
+                ""
+            ],
+            "Reembolsos": [
+                ""
+            ]
+        },
+        {
+            "Ignition": "1235345361",
+            "Nombre": "Irlanda",
+            "Apellido1": "Sanchez",
+            "Apellido2": "Tarango",
+            "CURP": "ADSA43534543h",
+            "Puesto": "Practicante",
+            "Departamento": "Recursos Humanos",
+            "SoftSkills": [
+                "Crear Objetos"
+            ],
+            "HardSkills": [
+                "Crear objetos"
+            ],
+            "Cursos": [
+                ""
+            ],
+            "Reembolsos": [
+                ""
+            ]
+        },
+        {
+            "Ignition": "1235df345361",
+            "Nombre": "Irlanda",
+            "Apellido1": "Sanchez",
+            "Apellido2": "Tarango",
+            "CURP": "ADSA43534543h",
+            "Puesto": "Practicante",
+            "Departamento": "Recursos Humanos",
+            "SoftSkills": [
+                "Crear Objetos"
+            ],
+            "HardSkills": [
+                "Crear objetos"
+            ],
+            "Cursos": [
+                ""
+            ],
+            "Reembolsos": [
+                ""
+            ]
+        }
+    ]
+}
