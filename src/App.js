@@ -44,7 +44,7 @@ export default function App(){
     return(
         <>
         <Nav/>
-        <h1>Empleados1234567</h1>
+        <h1>Empleados12345aa67</h1>
         <nav className="nav-search">
         <Search handleSearch={handleSearchByIgnition} section={"Ignition"}/>
         <Search handleSearch={handleSearchByPuesto} section={"Puesto"}/>
