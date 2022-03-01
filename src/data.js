@@ -1,5 +1,6 @@
-{
-    "empleados": [
+import react,{Component} from "react";
+
+const empleados = [
         {
             "Ignition": "154621354",
             "Active": true,
@@ -224,5 +225,6 @@
                 ""
             ]
         }
-    ]
-}
+    ];
+
+export default empleados;

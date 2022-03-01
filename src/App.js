@@ -4,7 +4,7 @@ import AddEmployee from "./components/AddEmployee.js"
 import ShowEmployee from "./components/ShowEmployee.js"
 import "./index.css"
 import { useState, useEffect } from "react"
-import Data from "./data.json"
+import empleados from "./data.js"
 
 
 export default function App(){
@@ -18,24 +18,24 @@ export default function App(){
 
     function handleSearchByName(e, value){
         e.preventDefault()
-        setSearchedEmployee(Data.empleados.filter((obj)=>obj.Nombre === value))
+        setSearchedEmployee(empleados.filter((obj)=>obj.Nombre === value))
     }
 
     function handleSearchByIgnition(e, value){
         e.preventDefault()
-        setSearchedEmployee(Data.empleados.filter((obj)=>obj.Ignition === value)) 
+        setSearchedEmployee(empleados.filter((obj)=>obj.Ignition === value)) 
     }
     function handleSearchByDept(e, value){
         e.preventDefault()
-        setSearchedEmployee(Data.empleados.filter((obj)=>obj.Departamento === value)) 
+        setSearchedEmployee(empleados.filter((obj)=>obj.Departamento === value)) 
     }
     function handleSearchByCURP(e, value){
         e.preventDefault()
-        setSearchedEmployee(Data.empleados.filter((obj)=>obj.CURP === value))
+        setSearchedEmployee(empleados.filter((obj)=>obj.CURP === value))
     }
     function handleSearchByPuesto(e, value){
         e.preventDefault()
-        setSearchedEmployee(Data.empleados.filter((obj)=>obj.Puesto === value)) 
+        setSearchedEmployee(empleados.filter((obj)=>obj.Puesto === value)) 
     }
 
     const show = searchedEmployee.map(emplo => {
@@ -43,6 +43,7 @@ export default function App(){
 
         // Posible respuesta para buscar
         ////https://stackoverflow.com/questions/63229433/react-search-by-object-key
+        //https://www.freecodecamp.org/news/search-and-filter-component-in-reactjs/
     return(
         <>
         <Nav/>
