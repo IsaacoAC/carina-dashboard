@@ -41,6 +41,8 @@ export default function App(){
     const show = searchedEmployee.map(emplo => {
         return <ShowEmployee key={emplo.Ignition} data={emplo}/>})
 
+        // Posible respuesta para buscar
+        ////https://stackoverflow.com/questions/63229433/react-search-by-object-key
     return(
         <>
         <Nav/>
@@ -54,6 +56,7 @@ export default function App(){
         </nav>
         <button onClick={toggleAdd}>Agregar</button>
         {add && <AddEmployee/>}
+        
         {searchedEmployee.map(emplo => {
              return <ShowEmployee key={emplo.Ignition} data={emplo}/>}) }
         </>
