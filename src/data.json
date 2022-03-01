@@ -2,6 +2,7 @@
     "empleados": [
         {
             "Ignition": "154621354",
+            "Active": true,
             "Nombre": "Carina",
             "Apellido1": "Armendariz",
             "Apellido2": "Loya",
@@ -27,6 +28,7 @@
         },
         {
             "Ignition": "11059361",
+            "Active": true,
             "Nombre": "Isaac",
             "Apellido1": "Ceballos",
             "Apellido2": "Aguilar",
@@ -48,6 +50,7 @@
         },
         {
             "Ignition": "1235345361",
+            "Active": true,
             "Nombre": "Irlanda",
             "Apellido1": "Sanchez",
             "Apellido2": "Tarango",
@@ -69,6 +72,7 @@
         },
         {
             "Ignition": "653215487",
+            "Active": true,
             "Nombre": "Maria",
             "Apellido1": "Lujan",
             "Apellido2": "Perez",
@@ -90,6 +94,7 @@
         },
         {
             "Ignition": "97846532",
+            "Active": true,
             "Nombre": "Luis",
             "Apellido1": "Mendoza",
             "Apellido2": "Gonzales",
@@ -111,6 +116,7 @@
         },
         {
             "Ignition": "564569865",
+            "Active": true,
             "Nombre": "Vanesa",
             "Apellido1": "Campos",
             "Apellido2": "Loya",
@@ -132,6 +138,7 @@
         },
         {
             "Ignition": "1245632123",
+            "Active": true,
             "Nombre": "Mario",
             "Apellido1": "Prieto",
             "Apellido2": "Sosa",
@@ -153,6 +160,7 @@
         },
         {
             "Ignition": "785432165",
+            "Active": true,
             "Nombre": "Luisa",
             "Apellido1": "Borquez",
             "Apellido2": "Nuñes",
@@ -174,6 +182,7 @@
         },
         {
             "Ignition": "98453215",
+            "Active": true,
             "Nombre": "Pedro",
             "Apellido1": "Ceballos",
             "Apellido2": "Villagran",
@@ -195,6 +204,7 @@
         },
         {
             "Ignition": "324455489",
+            "Active": true,
             "Nombre": "Camila",
             "Apellido1": "Gomez",
             "Apellido2": "Gonzales",
