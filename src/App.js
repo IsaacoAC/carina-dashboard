@@ -53,7 +53,7 @@ export default function App(){
         <Search handleSearch={handleSearchByCURP} section={"CURP"}/>
         </nav>
         <button onClick={toggleAdd}>Agregar</button>
-        
+        {add && <AddEmployee/>}
         {searchedEmployee.map(emplo => {
              return <ShowEmployee key={emplo.Ignition} data={emplo}/>}) }
         </>
