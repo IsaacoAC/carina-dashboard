@@ -44,6 +44,7 @@ export default function App(){
         // Posible respuesta para buscar
         ////https://stackoverflow.com/questions/63229433/react-search-by-object-key
         //https://www.freecodecamp.org/news/search-and-filter-component-in-reactjs/
+        //https://medium.com/crobyer/search-filter-with-react-js-88986c644ed5
     return(
         <>
         <Nav/>
