@@ -79,7 +79,7 @@ const empleados = [
             "Apellido2": "Perez",
             "CURP": "ADSH54654DS456",
             "Puesto": "Directora",
-            "Departamento": "Financieros",
+            "Departamento": "Finance",
             "SoftSkills": [
                 "Crear Objetos"
             ],

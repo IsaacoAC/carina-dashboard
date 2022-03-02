@@ -2,15 +2,18 @@ import Nav from "./components/Nav.js"
 import Search from "./components/Search.js"
 import AddEmployee from "./components/AddEmployee.js"
 import ShowEmployee from "./components/ShowEmployee.js"
+import FiltroDept from "./components/FiltroDept.js"
 import "./index.css"
 import { useState, useEffect } from "react"
 import empleados from "./data.js"
+
 
 
 export default function App(){
 
     const [add, setAdd] = useState(false)
     const [searchedEmployee, setSearchedEmployee] = useState([])
+    const [filter, setFilter]= useState("inicio")
 
     function toggleAdd(){
         setAdd(prevState => !prevState)
@@ -41,6 +44,13 @@ export default function App(){
     const show = searchedEmployee.map(emplo => {
         return <ShowEmployee key={emplo.Ignition} data={emplo}/>})
 
+    function setFiltroParam(e,value){
+        e.preventDefault();
+        
+        setFilter(value);
+    }
+
+
         // Posible respuesta para buscar
         ////https://stackoverflow.com/questions/63229433/react-search-by-object-key
         //https://www.freecodecamp.org/news/search-and-filter-component-in-reactjs/
@@ -55,6 +65,7 @@ export default function App(){
         <Search handleSearch={handleSearchByDept} section={"Departamento"}/>
         <Search handleSearch={handleSearchByName} section={"Nombre"}/>
         <Search handleSearch={handleSearchByCURP} section={"CURP"}/>
+        <FiltroDept setFiltroParam={setFiltroParam}/>
         </nav>
         <button onClick={toggleAdd}>Agregar</button>
         {add && <AddEmployee/>}
