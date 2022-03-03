@@ -1,8 +1,5 @@
 export default function ShowEmployee(props) {
     console.log(props.data)
-    if (props.data===[]){
-        return <h1>Sin resultado</h1>
-    }
     return (
         <>
             <table  className="show-table">

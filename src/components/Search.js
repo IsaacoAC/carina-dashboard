@@ -2,24 +2,18 @@ import { useState } from "react"
 import React from "react"
 
 export default function Search(props){
-    const [value, setValue] = useState("")
     return(
-        <form  className="form-search" onSubmit={
-            (e)=> props.handleSearch(e,value)
-            }>
-        <label htmlFor="header-search">
+        <>
+        <label className="form-search" htmlFor="header-search">
             {props.section}
         </label>
         <br></br>
-        <input
+        <input className="search-input"
             type="text"
             id="header-search"
             placeholder="Buscar"
-            onChange={e => setValue(e.target.value)}
+            onChange={e => props.handleSearch(e,e.target.value)}
         />
-        <button 
-            
-            type="submit">Buscar</button>
-    </form>
+    </>
     )
 }

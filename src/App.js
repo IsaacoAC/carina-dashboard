@@ -13,7 +13,11 @@ export default function App(){
 
     const [add, setAdd] = useState(false)
     const [searchedEmployee, setSearchedEmployee] = useState([])
-    const [filter, setFilter]= useState("inicio")
+    const [listaEmpleados, setListaEmpleados]=([empleados])
+    const [filter, setFilter]= useState("")
+    const [q, setQ]= useState("")
+    const [searchParam]=useState(["Nombre", "Apellido1", "Apellido2","CURP", "Puesto", "Ignition"])
+
 
     function toggleAdd(){
         setAdd(prevState => !prevState)
@@ -28,10 +32,6 @@ export default function App(){
         e.preventDefault()
         setSearchedEmployee(empleados.filter((obj)=>obj.Ignition === value)) 
     }
-    function handleSearchByDept(e, value){
-        e.preventDefault()
-        setSearchedEmployee(empleados.filter((obj)=>obj.Departamento === value)) 
-    }
     function handleSearchByCURP(e, value){
         e.preventDefault()
         setSearchedEmployee(empleados.filter((obj)=>obj.CURP === value))
@@ -41,15 +41,27 @@ export default function App(){
         setSearchedEmployee(empleados.filter((obj)=>obj.Puesto === value)) 
     }
 
-    const show = searchedEmployee.map(emplo => {
-        return <ShowEmployee key={emplo.Ignition} data={emplo}/>})
-
     function setFiltroParam(e,value){
         e.preventDefault();
-        
         setFilter(value);
     }
 
+    function qSetter(e,value){
+        e.preventDefault();
+        setQ(value);
+        handleSearch()
+    }
+
+    function handleSearch(lista){
+        return lista.filter((item)=>{
+            return searchParam.some((newItem)=>{
+                return(
+                    item[newItem].toString().toLowerCase().indexOf(q.toLowerCase())>-1
+                )
+            })
+        })
+    }
+    
 
         // Posible respuesta para buscar
         ////https://stackoverflow.com/questions/63229433/react-search-by-object-key
@@ -60,17 +72,13 @@ export default function App(){
         <Nav/>
         <h1>Empleados</h1>
         <nav className="nav-search">
-        <Search handleSearch={handleSearchByIgnition} section={"Ignition"}/>
-        <Search handleSearch={handleSearchByPuesto} section={"Puesto"}/>
-        <Search handleSearch={handleSearchByDept} section={"Departamento"}/>
-        <Search handleSearch={handleSearchByName} section={"Nombre"}/>
-        <Search handleSearch={handleSearchByCURP} section={"CURP"}/>
-        <FiltroDept setFiltroParam={setFiltroParam}/>
+        <FiltroDept  setFiltroParam={setFiltroParam}/>
+        <Search query={q} handleSearch={qSetter} />
         </nav>
         <button onClick={toggleAdd}>Agregar</button>
         {add && <AddEmployee/>}
         
-        {searchedEmployee.map(emplo => {
+        {handleSearch(listaEmpleados).map(emplo => {
              return <ShowEmployee key={emplo.Ignition} data={emplo}/>}) }
         </>
     )

@@ -42,10 +42,21 @@
 
 .nav-search{
     display: flex;
+    align-items: center;
 }
 
 .form-search{
     padding: 25px 10px;
+}
+
+.search-input{
+    width: 70%;
+    height: 25px;
+}
+
+.filtro{
+    height: 50px;
+    margin-bottom: 15px;
 }
 
 .form-add{

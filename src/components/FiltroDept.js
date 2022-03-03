@@ -3,7 +3,7 @@ import React from "react"
 export default function FiltroDept(props){
     return(
         <>
-        <select onChange={(e)=>(props.setFiltroParam(e, e.target.value))}>
+        <select className="filtro" onChange={(e)=>(props.setFiltroParam(e, e.target.value))}>
             <option value="">Selecciona un Departamento</option>
             <option value="Recursos Humanos">Recursos Humanos</option>
             <option value="Mercadotecnia">Merchandising</option>
