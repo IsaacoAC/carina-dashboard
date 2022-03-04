@@ -12,33 +12,15 @@ import empleados from "./data.js"
 export default function App(){
 
     const [add, setAdd] = useState(false)
-    const [searchedEmployee, setSearchedEmployee] = useState([])
-    const [listaEmpleados, setListaEmpleados]=([empleados])
-    const [filter, setFilter]= useState("")
+    const [listaEmpleados]=([empleados])
+    const [filter, setFilter]= useState("none")
     const [q, setQ]= useState("")
     const [searchParam]=useState(["Nombre", "Apellido1", "Apellido2","CURP", "Puesto", "Ignition"])
 
+    console.log(filter)
 
     function toggleAdd(){
         setAdd(prevState => !prevState)
-    }
-
-    function handleSearchByName(e, value){
-        e.preventDefault()
-        setSearchedEmployee(empleados.filter((obj)=>obj.Nombre === value))
-    }
-
-    function handleSearchByIgnition(e, value){
-        e.preventDefault()
-        setSearchedEmployee(empleados.filter((obj)=>obj.Ignition === value)) 
-    }
-    function handleSearchByCURP(e, value){
-        e.preventDefault()
-        setSearchedEmployee(empleados.filter((obj)=>obj.CURP === value))
-    }
-    function handleSearchByPuesto(e, value){
-        e.preventDefault()
-        setSearchedEmployee(empleados.filter((obj)=>obj.Puesto === value)) 
     }
 
     function setFiltroParam(e,value){
@@ -49,35 +31,33 @@ export default function App(){
     function qSetter(e,value){
         e.preventDefault();
         setQ(value);
-        handleSearch()
     }
 
     function handleSearch(lista){
         return lista.filter((item)=>{
-            return searchParam.some((newItem)=>{
-                return(
-                    item[newItem].toString().toLowerCase().indexOf(q.toLowerCase())>-1
-                )
-            })
+            if(item.Departamento===filter){
+                return searchParam.some((newItem)=>{
+                    return(
+                        item[newItem].toString().toLowerCase().indexOf(q.toLowerCase())>-1
+                    )
+                })
+            }else if (filter==="none"){
+                return 
+            }
+            
         })
     }
     
-
-        // Posible respuesta para buscar
-        ////https://stackoverflow.com/questions/63229433/react-search-by-object-key
-        //https://www.freecodecamp.org/news/search-and-filter-component-in-reactjs/
-        //https://medium.com/crobyer/search-filter-with-react-js-88986c644ed5
     return(
         <>
         <Nav/>
         <h1>Empleados</h1>
         <nav className="nav-search">
         <FiltroDept  setFiltroParam={setFiltroParam}/>
-        <Search query={q} handleSearch={qSetter} />
+        <Search handleSearch={qSetter} />
         </nav>
         <button onClick={toggleAdd}>Agregar</button>
         {add && <AddEmployee/>}
-        
         {handleSearch(listaEmpleados).map(emplo => {
              return <ShowEmployee key={emplo.Ignition} data={emplo}/>}) }
         </>

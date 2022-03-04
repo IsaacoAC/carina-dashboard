@@ -1,5 +1,4 @@
 export default function ShowEmployee(props) {
-    console.log(props.data)
     return (
         <>
             <table  className="show-table">
