@@ -1,4 +1,4 @@
-import react,{Component} from "react";
+
 
 const empleados = [
         {

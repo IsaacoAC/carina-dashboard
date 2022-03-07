@@ -1,6 +1,6 @@
 export default function ShowEmployee(props) {
     return (
-        <>
+        <div className="contenedor-tabla">
             <table  className="show-table">
             <tbody>
             <tr>
@@ -51,6 +51,6 @@ export default function ShowEmployee(props) {
         </table>
             
         
-        </>
+        </div>
     )
 }

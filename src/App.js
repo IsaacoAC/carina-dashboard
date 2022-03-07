@@ -12,12 +12,10 @@ import empleados from "./data.js"
 export default function App(){
 
     const [add, setAdd] = useState(false)
-    const [listaEmpleados]=([empleados])
     const [filter, setFilter]= useState("none")
     const [q, setQ]= useState("")
     const [searchParam]=useState(["Nombre", "Apellido1", "Apellido2","CURP", "Puesto", "Ignition"])
-
-    console.log(filter)
+    const [newEmployee, setNewEmployee]=useState({})
 
     function toggleAdd(){
         setAdd(prevState => !prevState)
@@ -47,6 +45,12 @@ export default function App(){
             
         })
     }
+
+    function handleAdd(e,emplo){
+        e.preventDefault();
+        console.log(emplo)
+        toggleAdd();
+    }
     
     return(
         <>
@@ -57,8 +61,8 @@ export default function App(){
         <Search handleSearch={qSetter} />
         </nav>
         <button onClick={toggleAdd}>Agregar</button>
-        {add && <AddEmployee/>}
-        {handleSearch(listaEmpleados).map(emplo => {
+        {add && <AddEmployee add={handleAdd}/>}
+        {handleSearch(empleados).map(emplo => {
              return <ShowEmployee key={emplo.Ignition} data={emplo}/>}) }
         </>
     )

@@ -12,6 +12,7 @@ export default function AddCard(props){
             type="text"
             id="add-data"
             name={newName}
+            onChange={(e)=>props.onChange(e.target.value,e.target.name)}
         />
         </>
     )
