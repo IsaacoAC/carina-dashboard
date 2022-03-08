@@ -52,6 +52,21 @@ export default function AddCard(props){
                     </select>
                 </>
             )
+        }else if(props.field==="Fecha de ingreso"){
+            return(
+                <>
+                <label className="add-label" htmlFor="add-data">
+                    {props.field}
+                </label>
+                <input
+                    className="add-input"
+                    type="date"
+                    id="add-data"
+                    name={props.dbName}
+                    onChange={(e)=>props.onChange(e.target.value,e.target.name)}
+                />
+                </>
+            )
         }else{
             return(
                 <>

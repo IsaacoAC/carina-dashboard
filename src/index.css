@@ -2,16 +2,16 @@
     display: flex;
     list-style: none;
     color: green;
-    font-size: 25px;
+    font-size: 15px;
 }
 
 .nav-logo{
-    width: 350px;
+    width: 250px;
 }
 
 .menu{
     display: flex;
-    
+    flex-wrap: wrap;
     align-items: center;
 }
 .menu-items>li>a{
@@ -29,12 +29,12 @@
 }
 
 .nav-button{
-    font-size: 25px;
-    padding: 5px 35px;
+    font-size: 15px;
+    padding: 15px 25px;
     background-color: rgb(65, 65, 65);
     color: rgb(245, 245, 245);
     border-radius: 15px;
-    margin-left: 35px;
+    margin-left: auto;
 }
 .nav-button:hover{
     background-color: #ec7200;
@@ -73,8 +73,7 @@
 }
 
 .add-btn{
-    position:relative;
-    left: 93%;
+    float: right;
 
 }
 

@@ -12,12 +12,12 @@ const empleados = [
             "ClavePuestoDZ":"13579",
             "ClavePuestoSTPS": "2468",
             "Departamento": "Recursos Humanos",
-            "ClaveEdoSTPS":"12345",
-            "ClaveMnpoSTPS":"6789",
-            "ClaveEstudiosSTPS":"4",
+            "ClaveEdoSTPS":"8",
+            "ClaveMnpoSTPS":"19",
+            "ClaveEstudiosSTPS":"3",
             "ClaveDocProbSTPS":"98765",
             "CaveInstitucion":"2",
-            "FechaIngreso":"03/08/2022",
+            "FechaIngreso":"2022/03/22",
             "SoftSkills": [
                 "Action oriented",
                 "Builds Networks",
@@ -44,11 +44,12 @@ const empleados = [
             "CURP": "CEAI990411HCHBGS02",
             "Puesto": "Practicante",
             "Departamento": "Recursos Humanos",
+            "FechaIngreso":"2022/03/22",
             "SoftSkills": [
-                "Crear Objetos"
+                ""
             ],
             "HardSkills": [
-                "Crear objetos"
+                ""
             ],
             "Cursos": [
                 ""
@@ -66,6 +67,7 @@ const empleados = [
             "CURP": "ADSA43534543h",
             "Puesto": "Practicante",
             "Departamento": "Recursos Humanos",
+            "FechaIngreso":"2022/03/22",
             "SoftSkills": [
                 "Crear Objetos"
             ],
@@ -198,6 +200,7 @@ const empleados = [
             "CURP": "PSSH56487954HS",
             "Puesto": "Supervisor",
             "Departamento": "Recursos Humanos",
+            "FechaIngreso":"2022/03/22",
             "SoftSkills": [
                 "Crear Objetos"
             ],
