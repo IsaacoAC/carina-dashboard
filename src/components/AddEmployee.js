@@ -59,11 +59,13 @@ export default function AddEmployee(props){
             <br></br>
             <AddCard onChange={handleChange} field={"Codigo de puesto"}/>
             <AddCard onChange={handleChange} field={"Puesto"}/>
-            <AddCard onChange={handleChange} field={"Clave de ocupacion/puesto"}/>
+            <AddCard onChange={handleChange} field={"Clave de ocupacion/puesto STPS"}/>
             <br></br>
             <AddCard onChange={handleChange} field={"Clave nivel de estudios"}/>
             <AddCard onChange={handleChange} field={"Clave DOC aprobatorio"}/>
             <AddCard onChange={handleChange} field={"Clave institucion"}/>
+            <br></br>
+            <label>Fecha de ingreso</label>
             <br></br>
             <DatePicker 
                 selected={startDate} 
