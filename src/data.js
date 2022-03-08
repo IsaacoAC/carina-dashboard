@@ -16,7 +16,7 @@ const empleados = [
             "ClaveMnpoSTPS":"6789",
             "ClaveEstudiosSTPS":"4",
             "ClaveDocProbSTPS":"98765",
-            "CLaveInstitucion":"2",
+            "CaveInstitucion":"2",
             "FechaIngreso":"03/08/2022",
             "SoftSkills": [
                 "Action oriented",

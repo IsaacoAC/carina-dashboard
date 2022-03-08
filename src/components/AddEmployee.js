@@ -15,7 +15,15 @@ export default function AddEmployee(props){
             "Apellido2": "",
             "CURP": "",
             "Puesto": "",
+            "ClavePuestoDZ":"",
+            "ClavePuestoSTPS": "",
             "Departamento": "",
+            "ClaveEdoSTPS":"",
+            "ClaveMnpoSTPS":"",
+            "ClaveEstudiosSTPS":"",
+            "ClaveDocProbSTPS":"",
+            "ClaveInstitucion":"",
+            "FechaIngreso":"",
             "SoftSkills": [
                 ""
             ],
@@ -32,45 +40,39 @@ export default function AddEmployee(props){
     )
 
     function handleChange(value,name){
-        if(name==="Primer-Apellido"){
-            name="Apellido1"
-        }
-        if(name==="Segundo-Apellido"){
-            name="Apellido2"
-        }
         setEmplo((prevEmplo)=>{
             return {
                 ...prevEmplo,
                 [name]:value
             }
         })
+        console.log(value,name)
     }
 
     return(
         <form className="form-add">
             <h2>Empleados</h2>
-            <AddCard onChange={handleChange} field={"Nombre"}/>
-            <AddCard onChange={handleChange} field={"Primer Apellido"}/>
-            <AddCard onChange={handleChange} field={"Segundo Apellido"}/>
+            <AddCard onChange={handleChange} field={"Nombre"} dbName={"Nombre"}/>
+            <AddCard onChange={handleChange} field={"Primer Apellido"} dbName={"Apellido1"}/>
+            <AddCard onChange={handleChange} field={"Segundo Apellido"} dbName={"Apellido2"}/>
             <br></br>
-            <AddCard onChange={handleChange} field={"CURP"}/>
-            <AddCard onChange={handleChange} field={"Clave de estado"}/>
-            <AddCard onChange={handleChange} field={"Clave de municipio"}/>
+            <AddCard onChange={handleChange} field={"Departamento"} dbName={"Departamento"}/>
+            <AddCard onChange={handleChange} field={"Ignition"} dbName={"Ignition"}/>
             <br></br>
-            <AddCard onChange={handleChange} field={"Codigo de puesto"}/>
-            <AddCard onChange={handleChange} field={"Puesto"}/>
-            <AddCard onChange={handleChange} field={"Clave de ocupacion/puesto STPS"}/>
+            <AddCard onChange={handleChange} field={"CURP"} dbName={"CURP"}/>
+            <AddCard onChange={handleChange} field={"Clave de estado"} dbName={"ClaveEdoSTPS"}/>
+            <AddCard onChange={handleChange} field={"Clave de municipio"} dbName={"ClaveMnpoSTPS"}/>
             <br></br>
-            <AddCard onChange={handleChange} field={"Clave nivel de estudios"}/>
-            <AddCard onChange={handleChange} field={"Clave DOC aprobatorio"}/>
-            <AddCard onChange={handleChange} field={"Clave institucion"}/>
+            <AddCard onChange={handleChange} field={"Codigo de puesto DZ"} dbName={"ClavePuestoDZ"}/>
+            <AddCard onChange={handleChange} field={"Nombre de Puesto"} dbName={"Puesto"}/>
+            <AddCard onChange={handleChange} field={"Clave de ocupacion/puesto STPS"} dbName={"ClavePuestoSTPS"}/>
             <br></br>
-            <label>Fecha de ingreso</label>
+            <AddCard onChange={handleChange} field={"Clave nivel de estudios"} dbName={"ClaveEstudiosSTPS"}/>
+            <AddCard onChange={handleChange} field={"Clave DOC aprobatorio"} dbName={"ClaveDocProbSTPS"}/>
+            <AddCard onChange={handleChange} field={"Clave institucion"} dbName={"ClaveInstitucion"}/>
             <br></br>
-            <DatePicker 
-                selected={startDate} 
-                onChange={(date) => setStartDate(date)}
-            />
+            {/* Buscar como agregar fehas a un formulario */
+                <AddCard onChange={handleChange} field={"Fecha de ingreso"} dbName={"FechaIngreso"}/>}
             <button className="add-btn" onClick={(e)=>props.add(e,emplo)}>Agregar</button>
         </form>
     )
