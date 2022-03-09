@@ -81,6 +81,7 @@ export default function App(){
     function handleAdd(e){
         e.preventDefault();
         ArregloEmpleados.push(emplo)
+        toggleAdd()
     }
     
     function setEmpleado(value,name){

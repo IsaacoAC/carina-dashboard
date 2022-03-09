@@ -85,6 +85,27 @@
      border: 2px solid rgb(146, 144, 0);
  }
 
+.btn-eliminar{
+    font-size: 15px;
+    background-color: #dd0000;
+    color: bisque;
+    width: fit-content;
+    
+}
+
+.btn-editar{
+    margin: 10px;
+    font-size: 15px;
+    background-color: #00c0b6;
+    color: rgb(63, 57, 50);
+    width: fit-content;
+}
+
+.btn-editar:hover,.btn-eliminar:hover{
+    cursor: pointer;
+}
+
  .contenedor-tabla{
      display:grid;
+     
  }

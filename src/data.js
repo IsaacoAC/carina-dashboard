@@ -21,7 +21,13 @@ const empleados = [
             "SoftSkills": [
                 "Action oriented",
                 "Builds Networks",
-                "Crear Objetos"
+                "Crear Objetos",
+                "Builds Networks",
+                "Builds Networks",
+                "Builds Networks",
+                "Builds Networks",
+                "Builds Networks",
+                "Builds Networks"
             ],
             "HardSkills": [
                 "Organizational Development",
@@ -46,7 +52,15 @@ const empleados = [
             "Departamento": "Recursos Humanos",
             "FechaIngreso":"2022/03/22",
             "SoftSkills": [
-                ""
+                "Action oriented",
+                "Builds Networks",
+                "Crear Objetos",
+                "Builds Networks",
+                "Builds Networks",
+                "Builds Networks",
+                "Builds Networks",
+                "Builds Networks",
+                "Builds Networks"
             ],
             "HardSkills": [
                 ""

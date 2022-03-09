@@ -113,10 +113,14 @@ export default function ShowEmployee(props) {
                 <th>Reembolsos:</th>
                 <td>{props.data.Reembolsos.map((r)=> <tr> {r? r:"-"}</tr>)}</td>
             </tr>
-            </tbody>
+            <th>Acciones:</th>
+                <td>
+                    <button className="btn-editar">EDITAR</button>
+                    <button className="btn-eliminar">DESACTIVAR</button>
+                </td>
+                
+                </tbody>
         </table>
-            
-        
         </div>
     )
 }
