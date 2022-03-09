@@ -3,50 +3,12 @@ import { useState } from "react"
 
 export default function AddEmployee(props){
 
-    const [emplo, setEmplo]=useState(
-        {
-            "Ignition": "",
-            "Active": true,
-            "Nombre": "",
-            "Apellido1": "",
-            "Apellido2": "",
-            "CURP": "",
-            "Puesto": "",
-            "ClavePuestoDZ":"",
-            "ClavePuestoSTPS": "",
-            "Departamento": "",
-            "ClaveEdoSTPS":"8",
-            "ClaveMnpoSTPS":"19",
-            "ClaveEstudiosSTPS":"",
-            "ClaveDocProbSTPS":"",
-            "ClaveInstitucion":"",
-            "FechaIngreso":"",
-            "SoftSkills": [
-                ""
-            ],
-            "HardSkills": [
-                ""
-            ],
-            "Cursos": [
-                ""
-            ],
-            "Reembolsos": [
-                ""
-            ]
-        }
-    )
-
     function handleChange(value,name){
-        setEmplo((prevEmplo)=>{
-            return {
-                ...prevEmplo,
-                [name]:value
-            }
-        })
+        props.addChange(value,name)
     }
 
     return(
-        <form onSubmit={(e)=>props.add(e,emplo)} className="form-add">
+        <form onSubmit={(e)=>props.add(e)} className="form-add">
             <h2>Empleados</h2>
             <AddCard onChange={handleChange} field={"Nombre"} dbName={"Nombre"}/>
             <AddCard onChange={handleChange} field={"Primer Apellido"} dbName={"Apellido1"}/>

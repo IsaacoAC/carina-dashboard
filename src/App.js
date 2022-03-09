@@ -16,8 +16,38 @@ export default function App(){
     const [filter, setFilter]= useState("none")
     const [q, setQ]= useState("")
     const [searchParam]=useState(["Nombre", "Apellido1", "Apellido2","CURP", "Puesto", "Ignition"])
-    const [newEmployee, setNewEmployee]=useState({})
-    let nuevoEmpleado={}
+    const [emplo, setEmplo]=useState(
+        {
+            "Ignition": "",
+            "Active": true,
+            "Nombre": "",
+            "Apellido1": "",
+            "Apellido2": "",
+            "CURP": "",
+            "Puesto": "",
+            "ClavePuestoDZ":"",
+            "ClavePuestoSTPS": "",
+            "Departamento": "",
+            "ClaveEdoSTPS":"8",
+            "ClaveMnpoSTPS":"19",
+            "ClaveEstudiosSTPS":"",
+            "ClaveDocProbSTPS":"",
+            "ClaveInstitucion":"",
+            "FechaIngreso":"",
+            "SoftSkills": [
+                ""
+            ],
+            "HardSkills": [
+                ""
+            ],
+            "Cursos": [
+                ""
+            ],
+            "Reembolsos": [
+                ""
+            ]
+        }
+    )
 
     function toggleAdd(){
         setAdd(prevState => !prevState)
@@ -48,16 +78,18 @@ export default function App(){
         })
     }
 
-    function handleAdd(e,empleado){
+    function handleAdd(e){
         e.preventDefault();
-        setNewEmployee(empleado)
-        ArregloEmpleados.push(newEmployee)
-        
+        ArregloEmpleados.push(emplo)
     }
     
-    console.log(ArregloEmpleados)
-
-    
+    function setEmpleado(value,name){
+    setEmplo((prevEmplo)=>{
+        return {
+            ...prevEmplo,
+            [name]:value
+        }
+    })}
     return(
         <>
         <Nav/>
@@ -67,9 +99,14 @@ export default function App(){
         <Search handleSearch={qSetter} />
         </nav>
         <button onClick={toggleAdd}>Agregar</button>
-        <AddEmployee add={handleAdd}/>
+        {add && <AddEmployee add={handleAdd} addChange={setEmpleado}/>}
         {handleSearch(ArregloEmpleados).map(emplo => {
-             return <ShowEmployee key={emplo.Ignition} data={emplo}/>}) }
+            if(emplo.Active===false){
+                return
+            }else{
+                return <ShowEmployee key={emplo.Ignition} data={emplo}/>
+            }
+             }) }
         </>
     )
 } 
