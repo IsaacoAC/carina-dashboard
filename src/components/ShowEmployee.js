@@ -35,8 +35,9 @@ export default function ShowEmployee(props) {
 
     return (
         <div className="contenedor-tabla">
-            <table  className="show-table">
-            <tbody>
+            <table  className={props.data.Active? "show-table":"show-inactive-table"}>
+            
+            <tbody >
             <tr>
                 <th>Ignition:</th>
                 <td>{props.data.Ignition}</td>
@@ -116,7 +117,8 @@ export default function ShowEmployee(props) {
             <th>Acciones:</th>
                 <td>
                     <button className="btn-editar">EDITAR</button>
-                    <button className="btn-eliminar">DESACTIVAR</button>
+                    {props.data.Active? <button onClick={()=>props.desactivar(props.data.Ignition)} className="btn-eliminar">DESACTIVAR</button>:
+                    <button onClick={()=>props.activar(props.data.Ignition)} className="btn-activar">ACTIVAR</button>}
                 </td>
                 
                 </tbody>

@@ -81,6 +81,12 @@
     margin-top: 25px;
     border: 10px solid rgb(228, 124, 54);
 }
+
+.show-inactive-table{
+    margin-top: 25px;
+    border: 10px solid rgb(228, 124, 54);
+    background-color: gray;
+}
  table, th, tr, td{
      border: 2px solid rgb(146, 144, 0);
  }
@@ -90,7 +96,13 @@
     background-color: #dd0000;
     color: bisque;
     width: fit-content;
-    
+}
+
+.btn-activar{
+    font-size: 15px;
+    background-color: #059b00;
+    color: bisque;
+    width: fit-content;
 }
 
 .btn-editar{

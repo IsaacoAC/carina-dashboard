@@ -11,7 +11,7 @@ import empleados from "./data.js"
 
 export default function App(){
 
-    const ArregloEmpleados=empleados
+    const [ArregloEmpleados, setArregloEmpleados]=useState(empleados)
     const [add, setAdd] = useState(false)
     const [filter, setFilter]= useState("none")
     const [q, setQ]= useState("")
@@ -91,6 +91,28 @@ export default function App(){
             [name]:value
         }
     })}
+
+    function handleDesactivar(ignition){
+        let nuevoArreglo= ArregloEmpleados.map(
+            (empleado)=>{
+                if(empleado.Ignition===ignition){
+                    return ({
+                        ...empleado,
+                        Active:false}
+                    )
+                    
+                }else{
+                    return empleado
+                }
+            }
+        )
+        setArregloEmpleados(nuevoArreglo)
+    }
+
+    function handleActivar(ignition){
+        console.log(ignition)
+    }
+
     return(
         <>
         <Nav/>
@@ -102,12 +124,13 @@ export default function App(){
         <button onClick={toggleAdd}>Agregar</button>
         {add && <AddEmployee add={handleAdd} addChange={setEmpleado}/>}
         {handleSearch(ArregloEmpleados).map(emplo => {
-            if(emplo.Active===false){
-                return
-            }else{
-                return <ShowEmployee key={emplo.Ignition} data={emplo}/>
+                return <ShowEmployee 
+                key={emplo.Ignition} 
+                data={emplo}
+                desactivar={handleDesactivar}
+                activar={handleActivar}/>
             }
-             }) }
+             ) }
         </>
     )
 } 
