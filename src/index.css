@@ -113,7 +113,7 @@
     width: fit-content;
 }
 
-.btn-editar:hover,.btn-eliminar:hover{
+.btn-editar:hover,.btn-eliminar:hover,.btn-activar:hover{
     cursor: pointer;
 }
 

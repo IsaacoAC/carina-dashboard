@@ -16,7 +16,7 @@ export default function ShowEmployee(props) {
     }
 
     function selectInstitucion(){
-        switch(props.data.CaveInstitucion){
+        switch(props.data.ClaveInstitucion){
             case "1":
                 return "1: Publica";
             case "2":
@@ -116,7 +116,7 @@ export default function ShowEmployee(props) {
             </tr>
             <th>Acciones:</th>
                 <td>
-                    <button className="btn-editar">EDITAR</button>
+                    <button onClick={()=>props.handleEditar(props.data.Ignition)} className="btn-editar">EDITAR</button>
                     {props.data.Active? <button onClick={()=>props.desactivar(props.data.Ignition)} className="btn-eliminar">DESACTIVAR</button>:
                     <button onClick={()=>props.activar(props.data.Ignition)} className="btn-activar">ACTIVAR</button>}
                 </td>

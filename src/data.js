@@ -4,6 +4,7 @@ const empleados = [
         {
             "Ignition": "154621354",
             "Active": true,
+            "Editable":false,
             "Nombre": "Carina",
             "Apellido1": "Armendariz",
             "Apellido2": "Loya",
@@ -16,7 +17,7 @@ const empleados = [
             "ClaveMnpoSTPS":"19",
             "ClaveEstudiosSTPS":"3",
             "ClaveDocProbSTPS":"98765",
-            "CaveInstitucion":"2",
+            "ClaveInstitucion":"2",
             "FechaIngreso":"2022/03/22",
             "SoftSkills": [
                 "Action oriented",
@@ -44,6 +45,7 @@ const empleados = [
         {
             "Ignition": "11059361",
             "Active": true,
+            "Editable":false,
             "Nombre": "Isaac",
             "Apellido1": "Ceballos",
             "Apellido2": "Aguilar",
@@ -75,6 +77,7 @@ const empleados = [
         {
             "Ignition": "1235345361",
             "Active": true,
+            "Editable":false,
             "Nombre": "Irlanda",
             "Apellido1": "Sanchez",
             "Apellido2": "Tarango",
@@ -208,6 +211,7 @@ const empleados = [
         {
             "Ignition": "98453215",
             "Active": true,
+            "Editable":false,
             "Nombre": "Pedro",
             "Apellido1": "Ceballos",
             "Apellido2": "Villagran",

@@ -4,6 +4,10 @@
 
 export default function AddCard(props){
 
+    function reverseDate(date){
+        return date.split("/").reverse().join("/");
+    }
+
     const Render= ()=>{
         if(props.field==="Clave nivel de estudios"){
             return(
@@ -63,7 +67,7 @@ export default function AddCard(props){
                     type="date"
                     id="add-data"
                     name={props.dbName}
-                    onChange={(e)=>props.onChange(e.target.value,e.target.name)}
+                    onChange={(e)=>props.onChange(reverseDate(e.target.value),e.target.name)}
                 />
                 </>
             )

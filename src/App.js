@@ -3,6 +3,7 @@ import Search from "./components/Search.js"
 import AddEmployee from "./components/AddEmployee.js"
 import ShowEmployee from "./components/ShowEmployee.js"
 import FiltroDept from "./components/FiltroDept.js"
+import EditEmployee from "./components/EditEmployee.js"
 import "./index.css"
 import { useState, useEffect } from "react"
 import empleados from "./data.js"
@@ -48,6 +49,7 @@ export default function App(){
             ]
         }
     )
+    let editEmpleado=[]
 
     function toggleAdd(){
         setAdd(prevState => !prevState)
@@ -84,7 +86,7 @@ export default function App(){
         toggleAdd()
     }
     
-    function setEmpleado(value,name){
+    function setNewEmpleado(value,name){
     setEmplo((prevEmplo)=>{
         return {
             ...prevEmplo,
@@ -92,15 +94,58 @@ export default function App(){
         }
     })}
 
+    function setEditEmpleado(ignition,value,name){
+        editEmpleado= ArregloEmpleados.map(
+            (empleado)=>{
+                if(empleado.Ignition===ignition){
+                    return ({
+                        ...empleado,
+                        [name]:value
+                    })
+                }else{
+                    return empleado
+                }
+            }
+        )
+        setArregloEmpleados(editEmpleado)
+    }
+    
+    function handleGuardarEmpleado(ignition){
+            handleEditable(ignition)
+    }
+
+    function handleEditable(ignition){
+        let nuevoArreglo= ArregloEmpleados.map(
+            (empleado)=>{
+                if(empleado.Ignition===ignition && empleado.Editable===true){
+                    return ({
+                        ...empleado,
+                        Editable:false
+                    }
+                    )
+                }else if(empleado.Ignition===ignition && empleado.Editable===false){
+                    return ({
+                        ...empleado,
+                        Editable:true
+                    }
+                    )
+                }else{
+                    return empleado
+                }
+            }
+        )
+        setArregloEmpleados(nuevoArreglo)
+    }
+
     function handleDesactivar(ignition){
         let nuevoArreglo= ArregloEmpleados.map(
             (empleado)=>{
                 if(empleado.Ignition===ignition){
                     return ({
                         ...empleado,
-                        Active:false}
+                        Active:false
+                    }
                     )
-                    
                 }else{
                     return empleado
                 }
@@ -110,7 +155,20 @@ export default function App(){
     }
 
     function handleActivar(ignition){
-        console.log(ignition)
+        let nuevoArreglo= ArregloEmpleados.map(
+            (empleado)=>{
+                if(empleado.Ignition===ignition){
+                    return ({
+                        ...empleado,
+                        Active:true
+                    }
+                    )
+                }else{
+                    return empleado
+                }
+            }
+        )
+        setArregloEmpleados(nuevoArreglo)
     }
 
     return(
@@ -122,13 +180,26 @@ export default function App(){
         <Search handleSearch={qSetter} />
         </nav>
         <button onClick={toggleAdd}>Agregar</button>
-        {add && <AddEmployee add={handleAdd} addChange={setEmpleado}/>}
+        {add && <AddEmployee add={handleAdd} addChange={setNewEmpleado}/>}
         {handleSearch(ArregloEmpleados).map(emplo => {
-                return <ShowEmployee 
-                key={emplo.Ignition} 
-                data={emplo}
-                desactivar={handleDesactivar}
-                activar={handleActivar}/>
+                if(emplo.Editable===true){
+                    return <EditEmployee
+                    key={emplo.Ignition} 
+                    data={emplo}
+                    desactivar={handleDesactivar}
+                    activar={handleActivar}
+                    edit={setEditEmpleado}
+                    guardarEmpleado={handleGuardarEmpleado}
+                    />
+                }else{
+                    return <ShowEmployee 
+                    key={emplo.Ignition} 
+                    data={emplo}
+                    desactivar={handleDesactivar}
+                    activar={handleActivar}
+                    handleEditar={handleEditable}/>
+                }
+                
             }
              ) }
         </>
