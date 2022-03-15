@@ -170,6 +170,8 @@ export default function App(){
         )
         setArregloEmpleados(nuevoArreglo)
     }
+    //https://www.freecodecamp.org/news/how-to-work-with-multiple-checkboxes-in-react/
+    //https://www.freecodecamp.org/news/what-is-state-in-react-explained-with-examples/
 
     return(
         <>
