@@ -107,6 +107,7 @@ export default function App(){
                 }
             }
         )
+        
         setArregloEmpleados(editEmpleado)
     }
     

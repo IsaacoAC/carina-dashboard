@@ -83,7 +83,7 @@ export default function EditEmployee(props) {
                 <th>Puesto:</th>
                 <td>{props.data.Puesto}</td>
                 <td><input 
-                onChange={(e)=>props.edit(e.target.value,e.target.name)} 
+                onChange={(e)=>props.edit(props.data.Ignition,e.target.value,e.target.name)} 
                 name="Puesto" 
                 type="text" placeholder={props.data.Puesto} ></input></td>
             </tr>
@@ -99,7 +99,7 @@ export default function EditEmployee(props) {
                 <th>Clave de Puesto STPS:</th>
                 <td>{props.data.ClavePuestoSTPS}</td>
                 <td><input 
-                onChange={(e)=>props.edit(e.target.value,e.target.name)} 
+                onChange={(e)=>props.edit(props.data.Ignition,e.target.value,e.target.name)} 
                 name="ClavePuestoSTPS" 
                 type="text" placeholder={props.data.ClavePuestoSTPS} ></input></td>
             </tr>
@@ -131,7 +131,7 @@ export default function EditEmployee(props) {
                 <th>Clave de Documento Probatorio STPS:</th>
                 <td>{props.data.ClaveDocProbSTPS}</td>
                 <td><input 
-                onChange={(e)=>props.edit(e.target.value,e.target.name)} 
+                onChange={(e)=>props.edit(props.data.Ignition,e.target.value,e.target.name)} 
                 name="ClaveDocProbSTPS" 
                 type="text" placeholder={props.data.ClaveDocProbSTPS} ></input></td>
             </tr>
