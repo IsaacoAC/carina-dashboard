@@ -121,3 +121,22 @@
      display:grid;
      
  }
+
+ .cat-title{
+     padding: 0;
+ }
+ .cat-check{
+     text-align: center;
+     margin-left: 10px;
+     padding-top: 0;
+ }
+
+ .cat-list{
+     display: flex;
+     list-style: none;
+     padding-left: 0;
+ }
+
+ .li-cat{
+     margin: 5px;
+ }
